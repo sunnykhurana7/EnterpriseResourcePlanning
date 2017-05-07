@@ -1,0 +1,126 @@
+<?php
+    include '../includes/conn.php';
+?>
+
+
+
+
+<?php
+    if(!isset($_SESSION['admin_username'])){
+        header('location:index.php');
+    }
+?>
+
+<html>
+<head>
+<title>Jagan Institute Of Management Studies</title>
+<!-- All StyleSheet Comes Here -->
+
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap-glyphicons.css" type="text/css" rel="stylesheet">
+<link href="css/index.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- End Style Sheet -->
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-fixed-top navbar-inverse header">
+  <div class="container"> <a href="index.php" class="navbar-brand" style="color:#FFF;">Jagan Institute Of Management Studies</a> </div>
+</nav>
+<!-- End Of Navbar --> 
+
+<!-- Starting Of Main Container -->
+	<div class="container" style="margin-top:80px;">
+		<form method="post" enctype="multipart/form-data">
+			<div class="row" style="margin-bottom:15px;">
+				<div class="col-md-12 col-lg-12 col-xs-12 text-center">
+					<span style="font-size:25px;font-weight:bold;color:blue;text-transform:uppercase;">details of register students</span>
+				</div>
+			</div>
+				
+				
+			<!-- Table Start -->
+				<div class="container text-center">
+					<table class="table table-hover table-bordered">
+						<!-- Heading Of Tables -->
+     							
+                        <thead>
+							<tr>
+								<th>S.No</th>
+								<th>Student Username</th>
+							    <th>Student Name</th>
+								<th>Course</th>  		
+							</tr>
+							
+						</thead>
+						<!-- Body  of the table-->
+							<tbody>
+                            
+                            <?php
+                                $count = 0;
+                                if($stmt = $conn->query("select * from  admin_register_student")){
+                                    while($r = $stmt->fetch_array(MYSQLI_ASSOC)){
+                                    $count++;        
+                            ?>
+                            
+                            
+								<tr style="cursor:pointer;">
+									<td><?php echo $count;  ?></td>
+									<td><?php echo $r['username'];  ?></td>
+									<td><?php echo $r['fullname']; ?></td>
+									<td><?php echo $r['course']; ?></td>
+								</tr>
+								
+                                <?php
+                                    
+                                    }
+                                }
+                                ?>
+								
+							</tbody>
+						<!-- -->
+							
+					</table>
+				</div>
+			<!-- End Table -->	
+						
+			</form>
+			</div>
+			
+			
+			<!-- Start pagination -->
+				<div class="container text-center">
+					<ul class="pagination">
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+					</ul>
+				</div>
+			<!-- End pagination -->
+			
+<!-- End Of Main Container -->
+
+<!-- Starting Of Foooter  -->
+<footer class="container-fluid navbar-fixed-bottom" style="background-color:#000;">
+	<div class="container" style="margin-top:15px;margin-bottom:15px;">
+		<span style="color:#FFF;padding-top:20px;">&copy; Jagan Institute Of Management Studies</span>
+	</div>
+</footer> 
+
+<!-- End Foooter  -->
+
+
+</body>
+
+<!-- All Scripts Are Come Here -->
+<script type="text/javascript" src ="bootstrap.js"></script>
+<script type="text/javascript" src ="bootstrap.min.js"></script>
+
+<!-- End Of Scripts -->
+</html>

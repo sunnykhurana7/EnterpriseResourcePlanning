@@ -1,0 +1,177 @@
+<html>
+<head>
+<title>Jagan Institute Of Management Studies</title>
+<!-- All StyleSheet Comes Here -->
+
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<link href="css/bootstrap-glyphicons.css" type="text/css" rel="stylesheet">
+<link href="css/index.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- End Style Sheet -->
+
+<!-- All Javascript Code Comes Here-->
+	<script type="text/javascript">
+		function validation()
+			{	
+				var to =  document.getElementById("to").value;
+			    var subject =  document.getElementById("subject").value;
+				var message = document.getElementById("message").value;
+				var attach = document.getElementById("attach").value;
+				
+				if(to=="")
+				{
+					document.getElementById("to").style.borderColor = "#F00";
+					document.getElementById("t").innerHTML = "Username Required";
+					document.getElementById("to").focus();
+					return false;   	
+				}else
+                if(subject =="")
+      			{
+					document.getElementById("subject").style.borderColor  = "#F00";
+				    document.getElementById("subj").innerHTML = "Subject Required";
+					document.getElementById("subject").focus();
+					return false;		
+				}else
+                  if(message =="")
+					{	
+						document.getElementById("message").style.borderColor = "#F00";
+						document.getElementById("mess").innerHTML = "Please Enter Message";
+					    document.getElementById("message").focus();
+						return false;
+					}else
+                if(attach =="")
+					{
+						document.getElementById("attach").style.borderColor ="#F00";
+						document.getElementById("att").innerHTML = "Please Attach File";
+						document.getElementById("attach").focus();
+					    return false;
+					}				
+					
+			}
+	</script>
+<!-- End Javascript -->
+
+
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-fixed-top navbar-inverse header">
+  <div class="container"> <a href="#" class="navbar-brand" style="color:#FFF;">Jagan Institute Of Management Studies</a> </div>
+</nav>
+<!-- End Of Navbar --> 
+
+	<!-- Area Of Profile -->
+	
+		<div class="container" style="margin-top:100px;">
+		  <form method = "post" enctype="application/form-data">
+
+			<div class="row" style="margin-bottom:15px;">
+				<div class="col-md-12 col-lg-12 col-xs-12 text-center">
+					<span style="font-size:25px;font-weight:bold;color:blue;">SEND MESSAGES</span>
+				</div>
+			</div>
+
+
+		  
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				
+				
+				<div class="col-md-4">
+					<a href="inbox.html" class="" style="text-decoration:none;text-transform:uppercase;font-weight:bold;margin-bottom:15px;" title="Click Here To Check Your Inbox" target="_blank">Inbox</a>
+					
+					<a href="outbox.html" class="pull-right" style="text-decoration:none;text-transform:uppercase;font-weight:bold;margin-bottom:15px;"title="Click Here To Check Your Inbox" target="_blank" >outbox</a>		
+						
+						
+						
+					<div class="form-group" style="margin-top:15px">
+						<label>Select Course</label><br>
+						<select name="course" style="width:361px;height:36px;">
+							
+							<option name="mca" selected="true">Master In Computer Application</option>
+							<option name="bca">Bachelor Of Computer Application</option>
+							<option name="bba">Bachelor Of Business Administration</option>
+						</select>
+					</div>	
+					
+					<div class="form-group" style="margin-top:15px">
+						<label>Select Year</label><br>
+						<select name="year" style="width:361px;height:36px;">
+							<option name="firstyear" selected="true">First Year</option>
+							<option name="secondyear" selected="true">Second Year</option>
+							<option name="thirdyear" selected="true">Third Year</option>
+							
+						</select>
+					</div>	
+					
+					<div class="form-group" style="margin-top:15px">
+						<label>Select Semester</label><br>
+						<select name="semester" style="width:361px;height:36px;">
+							
+							<option name="firstsemester" selected="true">First Semester</option>
+							<option name="secondsemester">Second Semester</option>
+							<option name="thirdsemester">Third Semester</option>
+							<option name="thirdsemester">Fourth Semester</option>
+							<option name="thirdsemester">Fifth Semester</option>
+							<option name="thirdsemester">Sixth Semester</option>
+						</select>
+					</div>		
+					
+					
+					
+					<div class="form-group">
+						<label for ="subject">Subject</label>
+						<input type="text" class="form-control" placeholder="Rahul Tayagi" required id="subject" name="subject">
+						<span id="subj" style="color:#F00;font-weight:bold"></span>
+					</div>
+					
+					<div class="form-group">
+						<label for="message">Message</label>
+						<textarea class="form-control" style="resize:none;" placeholder="I Want A Help From You" required id="message" name="message"></textarea>
+						<span id="mess" style="color:#F00;font-weight:bold;"></span>
+					</div>
+					
+					<div class="form-group">
+						<label for="attach">Attach File</label>
+						<input type="file" class="form-control" required id="attach" name="attach">
+						<span id="att" style="color:#F00;font-weight:bold;"></span>
+					</div>
+					
+					
+					<div class="form-group text-center" style="margin-bottom:48px;">
+					    <input type="submit" class="btn btn-primary btn-sm" title="Click Here" value="Send Message" onClick="validation();">
+					</div>
+				
+				</div>
+				
+				
+				<div class="col-md-4">
+				</div>
+				
+			</div>
+		  </form>	
+		</div>
+	
+	<!-- End Of Profile -->
+	
+	
+	
+	<!-- Starting Of Foooter  -->
+<footer class="container-fluid" style="background-color:#000;">
+	<div class="container" style="margin-top:15px;margin-bottom:15px;">
+		<span style="color:#FFF;padding-top:20px;">&copy; Jagan Institute Of Management Studies</span>
+	</div>
+</footer>	
+
+<!-- End Foooter  -->
+</body>
+
+<!-- All Scripts Are Come Here -->
+<script type="text/javascript" src ="bootstrap.js"></script>
+<script type="text/javascript" src ="bootstrap.min.js"></script>
+
+<!-- End Of Scripts -->
+</html>
